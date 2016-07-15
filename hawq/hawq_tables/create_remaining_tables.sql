@@ -1,23 +1,3 @@
--- 1. HAWQ table
-DROP TABLE IF EXISTS retail_demo.categories_dim_hawq;
-CREATE TABLE retail_demo.categories_dim_hawq
-(
-    category_id integer NOT NULL,
-    category_name character varying(400) NOT NULL
-)
-WITH (appendonly=true, compresstype=zlib) DISTRIBUTED RANDOMLY;
-
--- 2. HAWQ table
-DROP TABLE IF EXISTS retail_demo.customers_dim_hawq;
-CREATE TABLE retail_demo.customers_dim_hawq
-(
-    customer_id TEXT,
-    first_name TEXT,
-    last_name TEXT,
-    gender TEXT
-)
-WITH (appendonly=true, compresstype=zlib) DISTRIBUTED RANDOMLY;
-
 -- 3. HAWQ table
 DROP TABLE IF EXISTS retail_demo.order_lineitems_hawq;
 CREATE  TABLE retail_demo.order_lineitems_hawq
