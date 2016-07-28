@@ -3,7 +3,7 @@ CREATE EXTERNAL TABLE retail_demo.categories_dim_pxf
     category_id integer,
     category_name character varying(400)
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/categories_dim/categories_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/categories_dim/categories_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 
@@ -14,7 +14,7 @@ CREATE EXTERNAL TABLE retail_demo.customers_dim_pxf
     last_name TEXT,
     gender TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/customers_dim/customers_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/customers_dim/customers_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 
@@ -53,7 +53,7 @@ CREATE  EXTERNAL TABLE retail_demo.order_lineitems_pxf
     ordering_session_id TEXT,
     website_url TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/order_lineitems/order_lineitems.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/order_lineitems/order_lineitems.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 CREATE EXTERNAL TABLE retail_demo.orders_pxf
@@ -90,7 +90,7 @@ CREATE EXTERNAL TABLE retail_demo.orders_pxf
     ordering_session_id TEXT,
     website_url TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/orders/orders.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/orders/orders.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 CREATE EXTERNAL TABLE retail_demo.customer_addresses_dim_pxf
@@ -109,7 +109,7 @@ CREATE EXTERNAL TABLE retail_demo.customer_addresses_dim_pxf
     country TEXT,
     phone_number TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/customer_addresses_dim/customer_addresses_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/customer_addresses_dim/customer_addresses_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 CREATE EXTERNAL TABLE retail_demo.date_dim_pxf
@@ -121,7 +121,7 @@ CREATE EXTERNAL TABLE retail_demo.date_dim_pxf
     reporting_week smallint,
     reporting_dow smallint
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/date_dim/date_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/date_dim/date_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 CREATE EXTERNAL TABLE retail_demo.email_addresses_dim_pxf
@@ -129,7 +129,7 @@ CREATE EXTERNAL TABLE retail_demo.email_addresses_dim_pxf
     customer_id TEXT,
     email_address TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/email_addresses_dim/email_addresses_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/email_addresses_dim/email_addresses_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 
@@ -138,7 +138,7 @@ CREATE EXTERNAL TABLE retail_demo.payment_methods_pxf
     payment_method_id smallint,
     payment_method_code character varying(20)
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/payment_methods/payment_methods.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/payment_methods/payment_methods.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 CREATE EXTERNAL TABLE retail_demo.products_dim_pxf
@@ -148,7 +148,7 @@ CREATE EXTERNAL TABLE retail_demo.products_dim_pxf
     price TEXT,
     product_name TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/retail_demo/products_dim/products_dim.tsv.gz?Fragmenter=HdfsDataFragmenter&Accessor=TextFileAccessor&Resolver=TextResolver')
+LOCATION ('pxf://192.168.166.131:51200/retail_demo/products_dim/products_dim.tsv.gz?profile=HdfsTextSimple')
 FORMAT 'TEXT' (DELIMITER = E'\t');
 
 
