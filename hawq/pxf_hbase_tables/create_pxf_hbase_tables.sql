@@ -4,7 +4,7 @@ CREATE EXTERNAL TABLE retail_demo.categories_dim_hbase
     recordkey integer,
     "cf1:category_name" character(400)
 )
-LOCATION ('pxf://pivhdsne:50070/categories_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/categories_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
@@ -16,7 +16,7 @@ CREATE EXTERNAL TABLE retail_demo.customers_dim_hbase
     "cf1:last_name" TEXT,
     "cf1:gender" character(1)
 )
-LOCATION ('pxf://pivhdsne:50070/customers_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/customers_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
@@ -56,14 +56,14 @@ CREATE  EXTERNAL TABLE retail_demo.order_lineitems_hbase
     "cf1:ordering_session_id" TEXT,
     "cf1:website_url" TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/order_lineitems?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/order_lineitems?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
 CREATE EXTERNAL TABLE retail_demo.orders_hbase
 (
     -- order_id TEXT,
-    recordkey integer,
+    recordkey bigint,
     "cf1:order_id" TEXT,
     "cf1:customer_id" TEXT,
     "cf1:store_id" TEXT,
@@ -96,7 +96,7 @@ CREATE EXTERNAL TABLE retail_demo.orders_hbase
     "cf1:ordering_session_id" TEXT,
     "cf1:website_url" TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/orders?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/orders?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
@@ -118,7 +118,7 @@ CREATE EXTERNAL TABLE retail_demo.customer_addresses_dim_hbase
     "cf1:country" TEXT,
     "cf1:phone_number" TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/customer_addresses_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/customer_addresses_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
@@ -132,7 +132,7 @@ CREATE EXTERNAL TABLE retail_demo.date_dim_hbase
     "cf1:reporting_week" integer,
     "cf1:reporting_dow" integer
 )
-LOCATION ('pxf://pivhdsne:50070/date_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/date_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 CREATE EXTERNAL TABLE retail_demo.email_addresses_dim_hbase
@@ -141,7 +141,7 @@ CREATE EXTERNAL TABLE retail_demo.email_addresses_dim_hbase
     recordkey integer,
     "cf1:email_address" TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/email_addresses_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/email_addresses_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
@@ -151,7 +151,7 @@ CREATE EXTERNAL TABLE retail_demo.payment_methods_hbase
     recordkey integer,
     "cf1:payment_method_code" character(20)
 )
-LOCATION ('pxf://pivhdsne:50070/payment_methods?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/payment_methods?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 CREATE EXTERNAL TABLE retail_demo.products_dim_hbase
@@ -163,7 +163,7 @@ CREATE EXTERNAL TABLE retail_demo.products_dim_hbase
     "cf1:price" TEXT,
     "cf1:product_name" TEXT
 )
-LOCATION ('pxf://pivhdsne:50070/products_dim?FRAGMENTER=HBaseDataFragmenter&Accessor=HBaseAccessor&Resolver=HBaseResolver')
+LOCATION ('pxf://sandbox.hortonworks.com:51200/products_dim?profile=HBase')
 FORMAT 'CUSTOM' (formatter='pxfwritable_import');
 
 
